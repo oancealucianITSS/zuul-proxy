@@ -1,0 +1,20 @@
+server:
+  port: 8101
+  servlet:
+    context-path: /gateway
+
+spring:
+  application:
+    name: gateway-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8100/eureka}
+    register-with-eureka: true
+    fetch-registry: true
+    should-unregister-on-shutdown: true
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
